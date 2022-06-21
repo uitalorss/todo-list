@@ -8,7 +8,6 @@
 .newTask{
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-top: -1.5rem;
   gap: 1rem;
 }

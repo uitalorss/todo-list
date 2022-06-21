@@ -1,6 +1,6 @@
 .taskList{
   margin: 4rem auto 0 auto;
-  width: 736px;
+  width: 712px;
 }
 
 .counters{
@@ -26,4 +26,8 @@
   background: var(--gray-400);
   padding: .2rem .5rem;
   border-radius: 8px;
+}
+
+.list{
+  margin-top: 1.5rem;
 }

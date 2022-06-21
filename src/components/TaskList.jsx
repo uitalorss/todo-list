@@ -1,3 +1,4 @@
+import { Task } from './Task'
 import styles from './TaskList.module.css'
 
 export function TaskList(){
@@ -11,6 +12,12 @@ export function TaskList(){
           Concluídas<span>0</span>
         </strong>
       </div>
+      <ul className={styles.list}>
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+      </ul>
     </div>
   )
 }
