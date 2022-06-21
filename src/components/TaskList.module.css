@@ -1,0 +1,29 @@
+.taskList{
+  margin: 4rem auto 0 auto;
+  width: 736px;
+}
+
+.counters{
+  display: flex;
+  justify-content: space-between;
+}
+
+.counters strong{
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.counters strong:first-child{
+  color: var(--blue);
+}
+
+.counters span{
+  color: var(--gray-100);
+  background: var(--gray-400);
+  padding: .2rem .5rem;
+  border-radius: 8px;
+}
