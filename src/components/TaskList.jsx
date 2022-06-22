@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { Task } from './Task'
 import styles from './TaskList.module.css'
 
-export function TaskList(){
+export function TaskList({tasks}){
+
   return(
     <div className={styles.taskList}>
       <div className={styles.counters}>
@@ -13,10 +15,9 @@ export function TaskList(){
         </strong>
       </div>
       <ul className={styles.list}>
-        <Task />
-        <Task />
-        <Task />
-        <Task />
+        {tasks.map(task => {
+          return <Task key={task.id} task={task}/>
+        })}
       </ul>
     </div>
   )
