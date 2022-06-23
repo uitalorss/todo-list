@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Task } from './Task'
 import styles from './TaskList.module.css'
 
-export function TaskList({tasks}){
+export function TaskList({tasks, handleDeleteTask}){
 
   return(
     <div className={styles.taskList}>
@@ -16,7 +16,7 @@ export function TaskList({tasks}){
       </div>
       <ul className={styles.list}>
         {tasks.map(task => {
-          return <Task key={task.id} task={task}/>
+          return <Task key={task.id} task={task} handleDeleteTask={handleDeleteTask}/>
         })}
       </ul>
     </div>

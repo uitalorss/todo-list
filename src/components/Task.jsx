@@ -1,7 +1,7 @@
 import { Circle, Trash } from 'phosphor-react'
 import styles from './Task.module.css'
 
-export function Task({task}){
+export function Task({task, handleDeleteTask}){
   return(
     <li className={styles.listItem}>
       <button className={styles.check}>
@@ -9,7 +9,7 @@ export function Task({task}){
       </button>
       <p>{task.description}</p>
       <button className={styles.delete}>
-        <Trash size={24}/>
+        <Trash onClick={() => handleDeleteTask(task.id)} size={24}/>
       </button>
     </li>
   )
