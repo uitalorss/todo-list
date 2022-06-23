@@ -8,7 +8,7 @@ export function TaskList({tasks}){
     <div className={styles.taskList}>
       <div className={styles.counters}>
         <strong>
-          Tarefas criadas<span>0</span>
+          Tarefas criadas<span>{tasks.length}</span>
         </strong>
         <strong>
           Concluídas<span>0</span>
