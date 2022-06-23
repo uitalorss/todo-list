@@ -27,8 +27,12 @@ export function App() {
       description: inputTask,
       completed: false
     }]
-    setTasks(newTask)
+    setTasks(newTask);
+    setInputTask('');
   }
+
+  let inputEmpty = inputTask.length === 0;
+
   return (
     <>
     <header className={styles.header}>
@@ -41,8 +45,9 @@ export function App() {
         value={inputTask}
         placeholder='Adicione uma nova tarefa'
         onChange={handleInputChange}
+        required
       />
-      <button onClick={handleCreateNewTask}>
+      <button disabled={inputEmpty} onClick={handleCreateNewTask}>
         Criar <PlusCircle  size={20}/></button>
     </form>
       <TaskList tasks={tasks}/>

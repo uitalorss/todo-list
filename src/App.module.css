@@ -36,3 +36,8 @@
   cursor: pointer;
   transition: background-color .1s;
 }
+
+.newTask button:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
