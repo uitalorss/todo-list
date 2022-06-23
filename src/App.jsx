@@ -34,10 +34,19 @@ export function App() {
   let inputEmpty = inputTask.length === 0;
 
   function handleDeleteTask(id){
-    let newListOfTasks = tasks.filter(task => {
+    let updateTask = tasks.filter(task => {
       return task.id !== id;
     })
-    setTasks(newListOfTasks);
+    setTasks(updateTask);
+  }
+
+  function handleCheckTask(id){
+    let updateTask = tasks.map(task => {
+      if(task.id === id){
+        return {...task, completed : !task.completed};
+      }
+    })
+    setTasks(updateTask);
   }
 
   return (
@@ -57,7 +66,11 @@ export function App() {
       <button disabled={inputEmpty} onClick={handleCreateNewTask}>
         Criar <PlusCircle  size={20}/></button>
     </form>
-      <TaskList tasks={tasks} handleDeleteTask={handleDeleteTask}/>
+      <TaskList 
+        tasks={tasks} 
+        handleDeleteTask={handleDeleteTask}
+        handleCheckTask={handleCheckTask}
+      />
     </>    
   )
 }

@@ -1,11 +1,11 @@
-import { Circle, Trash } from 'phosphor-react'
+import { CheckCircle, Circle, Trash } from 'phosphor-react'
 import styles from './Task.module.css'
 
-export function Task({task, handleDeleteTask}){
+export function Task({task, handleDeleteTask, handleCheckTask}){
   return(
     <li className={styles.listItem}>
-      <button className={styles.check}>
-        <Circle size={24} />
+      <button onClick={() => handleCheckTask(task.id)} className={styles.check}>
+        {task.completed ? <CheckCircle size={24} /> : <Circle size={24} />}
       </button>
       <p>{task.description}</p>
       <button className={styles.delete}>
