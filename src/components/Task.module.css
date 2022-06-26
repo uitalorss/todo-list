@@ -21,9 +21,20 @@
   outline: none;
 }
 
+.checked{
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.noChecked{
+  text-decoration: none;
+  color: var(--gray-100);
+}
+
 .check{
   color: var(--blue);
 }
+
 
 .delete{
   color: var(--gray-300);

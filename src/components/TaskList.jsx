@@ -3,6 +3,8 @@ import { Task } from './Task'
 import styles from './TaskList.module.css'
 
 export function TaskList({tasks, handleDeleteTask, handleCheckTask}){
+  const [counterCompleted, setCounterCompleted] = useState(0);
+
 
   return(
     <div className={styles.taskList}>
@@ -11,7 +13,7 @@ export function TaskList({tasks, handleDeleteTask, handleCheckTask}){
           Tarefas criadas<span>{tasks.length}</span>
         </strong>
         <strong>
-          Concluídas<span>0</span>
+          Concluídas<span>{counterCompleted}</span>
         </strong>
       </div>
       <ul className={styles.list}>
