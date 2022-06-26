@@ -2,9 +2,7 @@ import { useState } from 'react'
 import { Task } from './Task'
 import styles from './TaskList.module.css'
 
-export function TaskList({tasks, handleDeleteTask, handleCheckTask}){
-  const [counterCompleted, setCounterCompleted] = useState(0);
-
+export function TaskList({tasks, handleDeleteTask, handleCheckTask, counterCompleted}){
 
   return(
     <div className={styles.taskList}>

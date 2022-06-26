@@ -7,10 +7,11 @@ import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
 
 export function App() {
+  const [counterCompleted, setCounterCompleted] = useState(0);
   const [inputTask, setInputTask] = useState('')
   const [tasks, setTasks] = useState([
     {
-      id: 1,
+      id: uuidv4(),
       description: "Comprar pão",
       completed: false
     }
@@ -45,8 +46,20 @@ export function App() {
       if(task.id === id){
         return {...task, completed : !task.completed};
       }
+      return task;
     })
     setTasks(updateTask);
+    changeCount()
+  }
+
+  function changeCount(){
+    tasks.map(task => {
+      if(!task.completed){
+        return setCounterCompleted(counterCompleted + 1);
+      }else{
+        return setCounterCompleted(counterCompleted - 1);
+      }
+    })
   }
 
   return (
@@ -70,6 +83,7 @@ export function App() {
         tasks={tasks} 
         handleDeleteTask={handleDeleteTask}
         handleCheckTask={handleCheckTask}
+        counterCompleted={counterCompleted}
       />
     </>    
   )
