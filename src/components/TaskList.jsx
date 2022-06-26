@@ -11,7 +11,8 @@ export function TaskList({tasks, handleDeleteTask, handleCheckTask, counterCompl
           Tarefas criadas<span>{tasks.length}</span>
         </strong>
         <strong>
-          Concluídas<span>{counterCompleted}</span>
+          Concluídas
+          <span>{counterCompleted === 0 ? 0 : `${counterCompleted} de ${tasks.length}`}</span>
         </strong>
       </div>
       <ul className={styles.list}>
