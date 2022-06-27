@@ -48,13 +48,17 @@ export function App() {
   }
 
   function changeCount(){
-    tasks.map(task => {
-      if(!task.completed){
-        return setCounterCompleted(counterCompleted + 1);
-      }else{
-        return setCounterCompleted(counterCompleted - 1);
-      }
-    })
+    if(tasks.length === 0){
+      setCounterCompleted(0)
+    }else{
+      tasks.map(task => {
+        if(!task.completed){
+          return setCounterCompleted(counterCompleted + 1);
+        }else{
+          return setCounterCompleted(counterCompleted - 1);
+        }
+      })  
+    }
   }
 
   return (
