@@ -44,3 +44,15 @@
   color: var(--gray-300);
   text-align: center;
 }
+
+@media only screen and (max-width: 780px){
+  .taskList{
+    width: 520px;
+  } 
+}
+
+@media only screen and (max-width: 520px){
+  .taskList{
+    width: 80%;
+  } 
+}

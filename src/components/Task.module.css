@@ -44,3 +44,15 @@
   color: var(--danger);
 }
 
+@media only screen and (max-width: 780px){
+  .listItem{
+    width: 510px;
+    grid-template-columns: 1fr 5fr 1fr;
+  } 
+}
+
+@media only screen and (max-width: 520px){
+  .listItem{
+    width: 100%;
+  } 
+}
