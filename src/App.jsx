@@ -9,13 +9,7 @@ import {v4 as uuidv4} from 'uuid'
 export function App() {
   const [counterCompleted, setCounterCompleted] = useState(0);
   const [inputTask, setInputTask] = useState('')
-  const [tasks, setTasks] = useState([
-    {
-      id: uuidv4(),
-      description: "Comprar pão",
-      completed: false
-    }
-  ])
+  const [tasks, setTasks] = useState([])
 
   function handleInputChange(){
     setInputTask(event.target.value)
@@ -50,7 +44,7 @@ export function App() {
       return task;
     })
     setTasks(updateTask);
-    changeCount()
+    changeCount();
   }
 
   function changeCount(){
