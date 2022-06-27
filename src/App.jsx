@@ -39,6 +39,7 @@ export function App() {
       return task.id !== id;
     })
     setTasks(updateTask);
+    changeCount();
   }
 
   function handleCheckTask(id){
