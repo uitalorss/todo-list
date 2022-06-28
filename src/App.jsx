@@ -33,34 +33,36 @@ export function App() {
       return task.id !== id;
     })
     setTasks(updateTask);
-    changeCount();
+    changeCount(updateTask, id)
   }
 
   function handleCheckTask(id){
     let updateTask = tasks.map(task => {
       if(task.id === id){
-        return {...task, completed : !task.completed};
+        {return {...task, completed : !task.completed}};
       }
       return task;
-    })
+   })
     setTasks(updateTask);
-    changeCount();
+    changeCount(updateTask, id)
   }
 
-  function changeCount(){
-    if(tasks.length === 0){
+  function changeCount(task, id){
+    if(task.length === 0){
       setCounterCompleted(0)
     }else{
-      tasks.map(task => {
-        if(!task.completed){
-          return setCounterCompleted(counterCompleted + 1);
-        }else{
-          return setCounterCompleted(counterCompleted - 1);
+      task.map(taskItem => {
+        if(taskItem.id === id){
+          if(taskItem.completed){
+            setCounterCompleted(counterCompleted + 1);
+          }else{
+            setCounterCompleted(counterCompleted - 1);
+          }
         }
       })  
     }
+    return task;
   }
-
   return (
     <>
     <header className={styles.header}>
