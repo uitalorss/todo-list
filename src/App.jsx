@@ -29,17 +29,18 @@ export function App() {
   let inputEmpty = inputTask.length === 0;
 
   function handleDeleteTask(id){
+    
     let updateTask = tasks.filter(task => {
       return task.id !== id;
     })
+    changeCounterByDelete(id)
     setTasks(updateTask);
-    changeCount(updateTask, id)
   }
 
   function handleCheckTask(id){
     let updateTask = tasks.map(task => {
       if(task.id === id){
-        {return {...task, completed : !task.completed}};
+        return {...task, completed : !task.completed};
       }
       return task;
    })
@@ -50,19 +51,31 @@ export function App() {
   function changeCount(task, id){
     if(task.length === 0){
       setCounterCompleted(0)
-    }else{
-      task.map(taskItem => {
-        if(taskItem.id === id){
-          if(taskItem.completed){
-            setCounterCompleted(counterCompleted + 1);
-          }else{
-            setCounterCompleted(counterCompleted - 1);
-          }
-        }
-      })  
     }
-    return task;
+    task.map(taskItem => {
+      if(taskItem.id === id){
+        if(taskItem.completed){
+          setCounterCompleted(counterCompleted + 1);
+        }else if(taskItem === false){
+          setCounterCompleted(counterCompleted - 1);
+        }
+      }
+    })
   }
+
+  function changeCounterByDelete(id){
+    tasks.map(task => {
+      if(task.id === id){
+        if(task.completed){
+          setCounterCompleted(counterCompleted - 1);
+        }else{
+          setCounterCompleted(counterCompleted)
+        }
+      }
+    })
+  }
+
+  
   return (
     <>
     <header className={styles.header}>
