@@ -56,7 +56,7 @@ export function App() {
       if(taskItem.id === id){
         if(taskItem.completed){
           setCounterCompleted(counterCompleted + 1);
-        }else if(taskItem === false){
+        }else{
           setCounterCompleted(counterCompleted - 1);
         }
       }
